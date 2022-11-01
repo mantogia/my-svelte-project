@@ -1,8 +1,16 @@
 <script>
     import FeedbackItem from "./FeedbackItem.svelte";
-    export let feedback = []
-    console.log(feedback)
-  
+    import {fade, scale} from 'svelte/transition';
+    import {onMount, onDestroy} from 'svelte'
+
+    export let feedback
+    onMount(() => {
+
+    })
+
+    onDestroy(() => {
+
+    })
 
 
 </script>
@@ -10,7 +18,9 @@
     Feedback List
 
     {#each feedback as fb (fb.id)} 
-       <FeedbackItem item = {fb} on:delete-feedback/>
+        <div in:scale out:fade="{{duration: 500 }}">
+            <FeedbackItem item = {fb} on:delete-feedback/>
+        </div>
     {/each}
 
 </main>
