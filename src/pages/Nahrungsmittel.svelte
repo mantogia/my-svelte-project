@@ -1,6 +1,6 @@
 <script>
     import NahrungsmittelItem from "../components_2/NahrungsmittelItem.svelte";
-import NahrungsmittelList from "../components_2/NahrungsmittelList.svelte";
+    import NahrungsmittelList from "../components_2/NahrungsmittelList.svelte";
     import { nahrungsmittelliste } from '../store.js';
 
 
@@ -10,8 +10,23 @@ import NahrungsmittelList from "../components_2/NahrungsmittelList.svelte";
         liste = value;
     });
 
+    let min = 0;
+    let max = liste.length;
+
     const addOne  = (e) =>{
         number = number + 1;
+
+        console.log(getRndInteger(min, max));
+        console.log(max);
+    }
+
+    
+    
+
+    
+    
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min) ) + min;
     }
 
     const saveVote = (e) =>{
