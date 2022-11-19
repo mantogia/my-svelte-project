@@ -1,4 +1,7 @@
 <script>
+    import NahrungsmittelComponent from "./NahrungsmittelComponent.svelte";
+
+
 
 export let data;
 
@@ -11,7 +14,7 @@ export let data;
 
     {#each data as nm (nm.id)} 
 
-        <div>{nm.name}</div>
+        <NahrungsmittelComponent nahrungsmittel={nm}></NahrungsmittelComponent>
 
     {/each}
 
